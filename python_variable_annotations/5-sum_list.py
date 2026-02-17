@@ -1,4 +1,4 @@
-cx#!/usr/bin/env python3
+#!/usr/bin/env python3
 """
 Model return list sum as a float.
 """
