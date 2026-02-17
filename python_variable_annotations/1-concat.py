@@ -4,6 +4,7 @@ Model about using type-annotated
 to return concatenated string
 """
 
+
 def concat(str1: str, str2: str)-> str:
     """
     Arges:
