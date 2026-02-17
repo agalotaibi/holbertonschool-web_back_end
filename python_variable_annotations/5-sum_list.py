@@ -4,7 +4,7 @@ Model return list sum as a float.
 """
 
 
-def sum_list(input_list: list[float]) -> float:
+def sum_list(input_list: List[float]) -> float:
     """
     Args:
     input_list: passing arrgument
