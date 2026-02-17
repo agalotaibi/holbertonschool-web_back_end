@@ -4,7 +4,7 @@ Model about using type-annotated
 to return concatenated string
 """
 
-def concat(str1: String, str2: String)-> String:
+def concat(str1: str, str2: str)-> str:
     """
     Arges:
     str1: string pass to the function
