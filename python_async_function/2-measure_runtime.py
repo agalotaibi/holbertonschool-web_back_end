@@ -4,10 +4,10 @@ this module for measuring runtime of concurrent coroutines.
 """
 import time
 import asyncio
-from concurrent_coroutines import wait_n
 
+wait_n = __import__('1-concurrent_coroutines').wait_n
 
-def measure_time(n: int, max_delay: int) -> float:
+def measure_time(max_delay: int = 10, n: int = 0) -> float:
     """
     Measure the average execution time per coroutine for wait_n.
 
@@ -18,8 +18,10 @@ def measure_time(n: int, max_delay: int) -> float:
     Returns:
         Average execution time per coroutine as a float
     """
-    start_time = time.time()
-    asyncio.run(wait_n(n, max_delay))
-    end_time = time.time()
-    total_time = end_time - start_time
-    return total_time / n
+    first_time = time.perf_counter()
+    asyncio.run(wait_n(max_delay, n))
+    elapsed = time.perf_counter() - first_time
+    total_time = elapsed / n
+
+    return total_time
+
