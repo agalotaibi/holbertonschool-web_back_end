@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-This module provides a Server class and a helper function 
+This module provides a Server class and a helper function
 to paginate a database of popular baby names.
 """
 
@@ -40,7 +40,8 @@ class Server:
         Loads and caches the dataset from the CSV file.
 
         Returns:
-            List[List]: The dataset loaded from the CSV file, excluding the header.
+            List[List]: The dataset loaded from the
+            CSV file, excluding the header.
         """
         if self.__dataset is None:
             with open(self.DATA_FILE) as f:
