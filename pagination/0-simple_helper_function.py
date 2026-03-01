@@ -2,10 +2,11 @@
 """
 This module is about Simple helper function
 """
+from typing import Tuple
 
 
 
-def index_range(page:int, page_size: int):
+def index_range(page:int, page_size: int) -> Tuple[int, int]:
     """
     Helper function takes two integer arguments page and page_size.
     Args:
