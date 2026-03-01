@@ -60,7 +60,7 @@ class Server:
             page_size (int): The number of items per page (default is 10).
 
         Returns:
-            List[List]: A list of rows for the requested page. Returns an empty 
+            List[List]: A list of rows for the requested page. Returns an empty
                         list if the starting index is out of bounds.
 
         Raises:
