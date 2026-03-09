@@ -1,36 +1,18 @@
-class Car {
-    constructor(brand, motor, color) {
-	this.brand = brand;
-	this.motor = motor;
-	this.color = color;
-    }
+const cloneSymbol = Symbol('cloneCar');
 
-    get brand() { return this._brand; }
-    set brand(value) {
-	if (typeof value !== 'string') throw new TypeError('brand must be a string');
-	this._brand = value;
-    }
+export default class Car {
+  constructor(brand, motor, color) {
+    this._brand = brand;
+    this._motor = motor;
+    this._color = color;
+  }
 
-    get motor() { return this._motor; }
-    set motor(value) {
-	if (typeof value !== 'string') throw new TypeError('motor must be a string');
-	this._motor = value;
-    }
+  static get [Symbol.species]() {
+    return this;
+  }
 
-    get color() { return this._color; }
-    set color(value) {
-	if (typeof value !== 'string') throw new TypeError('color must be a string');
-	this._color = value;
-    }
-
-    static get [Symbol.species]() {
-	return this;
-    }
-
-    cloneCar() {
-	const ModelCar = this.constructor[Symbol.species];
-	return new ModelCar();
-    }
+  cloneCar() {
+    const Species = this.constructor[Symbol.species];
+    return new Species();
+  }
 }
-
-export default Car;
