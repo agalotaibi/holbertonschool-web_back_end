@@ -22,11 +22,11 @@ class Pricing {
   }
 
   set currency(value) {
-    // Use 'instanceof' to check if 'value' is an instance of the 'Currency' class
+
     if (!(value instanceof Currency)) {
       throw new TypeError('currency must be a Currency');
     }
-    this._currency = value; // Assign 'value', not the argument 'currency'
+    this._currency = value;
   }
 
   displayFullPrice() {
