@@ -29,12 +29,15 @@ class Car {
     this._color = value;
   }
 
-  cloneCar() {
-    const clone = new this.constructor(this.brand, this.motor, this.color);
-    
+    cloneCar() {
+    const clone = Object.create(Object.getPrototypeOf(this));
+
+    const props = Object.getOwnPropertyNames(this);
     const symbols = Object.getOwnPropertySymbols(this);
-    symbols.forEach(sym => {
-      clone[sym] = this[sym];
+    const allKeys = [...props, ...symbols];
+
+    allKeys.forEach((key) => {
+        clone[key] = this[key];
     });
 
     return clone;
