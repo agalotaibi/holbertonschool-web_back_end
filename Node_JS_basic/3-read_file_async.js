@@ -1,4 +1,10 @@
 const fs = require('fs');
+
+/**
+ * Counts students in a CSV file asynchronously.
+ * @param {string} path - The path to the CSV database.
+ * @returns {Promise}
+ */
 function countStudents(path) {
   return new Promise((resolve, reject) => {
     fs.readFile(path, 'utf8', (err, data) => {
