@@ -8,6 +8,7 @@ const HOST = 'localhost';
  * The callback is executed every time an HTTP request hits the server.
  */
 const app = http.createServer((req, res) => {
+  res.statusCode = 200;
   res.setHeader('Content-Type', 'text/plain');
   
   res.end('Hello Holberton School!');
