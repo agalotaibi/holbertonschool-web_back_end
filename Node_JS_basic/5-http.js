@@ -18,6 +18,9 @@ const app = http.createServer((req, res) => {
       .catch((err) => {
         res.end(err.message);
       });
+  }else {
+    res.statusCode = 404;
+    res.end('Not Found');
   }
 });
 
